@@ -1,8 +1,8 @@
 This file contains some useful terminal commands to execute for setting up the RaspberryPi
 _If you're viewing the plain version, please keep in mind that it's markdown-formatted._  
 
-### Default Login
-_It's better to change this, but here are the default credentials)_  
+#### Default Login
+_Although it's better to change this, but here are the default credentials)_  
 __User:__ `pi`  
 __Password:__ `raspberry`
 
@@ -15,7 +15,7 @@ __Password:__ `raspberry`
 `sudo apt-get install mlocate`  
 `updatedb`  
 `locate filename`  
-- See disk space
+- See disk space  
 `df -h`  
 
 ### GIT setup
