@@ -18,8 +18,12 @@ __Password:__ `raspberry`
 - See disk space  
 `df -h`  
 
-### GIT setup
-
+### GIT stuff
+`git clone git://github.com/repoName` __Clone a repo__  
+`git pull`  __Sync with remote tracking repo__  
+`git add filename` __Adds a file to the commit__  
+`git commit -m "I changed something!"`  
+`git push` __Send changes to repote tracking server__  
 
 ### Edit the Wifi Setup
 `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
