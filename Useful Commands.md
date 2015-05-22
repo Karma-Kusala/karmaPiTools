@@ -8,6 +8,11 @@ __Password:__ `raspberry`
 
 # Useful Commands
 
+### Booting
+_(add -F to run `fsck` on boot)_  
+`sudo shutdown -h now` __shut down__  
+`sudo shutdown -h now -r` __reboot__  
+
 ### File commands
 - Go into a directory (and execute commands from there)
 `cd /path/to/folder`
@@ -17,6 +22,8 @@ __Password:__ `raspberry`
 `locate filename`  
 - See disk space  
 `df -h`  
+- Create symlink (alias)
+`ln -s file /path/to/target`  
 
 ### GIT stuff
 `git clone git://github.com/repoName` __Clone a repo__  
@@ -48,7 +55,14 @@ Setup a timelapse with GPhoto (premade script)
 `sudo apt-get install gphoto2`    
 
 ### Video player
-
+- Setup init.d Deamon (launch on startup)  
+`sudo cp /home/pi/Desktop/karmaPiTools/omxplaylist/initScript.sh /etc/init.d/omxPlaylistd`  
+`sudo update-rc.d omxPlaylistd defaults`  
+`/etc/init.d/omxPlaylistd start`  
+`/etc/init.d/omxPlaylistd stop`  
+`sudo update-rc.d omxPlaylistd remove`
+- Start from LXDE  
+`sh /home/pi/Desktop/karmaPiTools/omxplaylist/initScript.sh`
 
 
 ### Setup a startup script (execute on boot)

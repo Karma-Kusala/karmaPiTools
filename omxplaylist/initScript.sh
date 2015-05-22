@@ -11,14 +11,39 @@
 # Description:       Plays video files in a loop from a scanned foler.
 ### END INIT INFO
 
+# quick enable startup daemon
+# sudo cp /home/pi/Desktop/karmaPiTools/omxplaylist/initScript.sh /etc/init.d/omxPlaylistd
+# sudo update-rc.d omxPlaylistd defaults
+
+# quick disable startup daemon
+# sudo update-rc.d omxPlaylistd remove
+# sudo rm /etc/init.d/omxPlaylistd
+
+# first warn before starting to prevent infinite loop #dirty
+#echo "Giving you 5 seconds to break the loop... (press any key)"
+#read -t 5 -n 1 -s KEY
+#if [ ! -z "$KEY" ]
+#then
+#	echo "Keypressed! Exiting time lapse now..."
+#	exit 0;
+#fi
 
 case "$1" in 
     start)
         echo "Starting omxPlaylist"
-        sh /home/pi/omxPlaylist/
+
+	echo "Giving you 5 seconds to exit (press any key)"
+	read -t 5 -n 1 -s KEY
+	if [ ! -z "$KEY" ]
+	then
+		echo "Keypressed! Exiting time lapse now..."
+		exit 0;
+	fi
+
+        sh /home/pi/Desktop/karmaPiTools/omxplaylist/omxPlayer.sh
         ;;
     stop)
-        echo "Stopping servoblaster"
+        echo "Stopping omxPlayList"
         killall omxPlaylist
         ;;
     *)

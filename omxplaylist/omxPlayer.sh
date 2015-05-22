@@ -1,25 +1,40 @@
 #!/bin/sh
 
+# these urls were useful for writing this:
+# 
+
 # get rid of the cursor so we don't see it when videos are running
+setterm -blank off -powerdown off
+setterm -background black
+setterm -clear
 setterm -cursor off
 
 # set here the path to the directory containing your videos
-VIDEOPATH="/mnt/storage/videos" 
+VIDEOPATH="/home/pi/Desktop/flam3s/" 
 
 # you can normally leave this alone
 SERVICE="omxplayer"
-SERVICE="omxplayer -o hdmi"
+SERVICEOPTIONS="-b"
 
 # now for our infinite loop!
 while true; do
-        if ps ax | grep -v grep | grep $SERVICE > /dev/null
-        then
-        sleep 1;
-else
         for entry in $VIDEOPATH/*
         do
+		if ps ax | grep -v grep | grep $SERVICE > /dev/null
+        	then
+			# kill unnecessary processes
+			pkill $SERVICE
+        		sleep 1;
+		fi
+
+		#fbset -xres 1920 -yres 1080 -depth 16
                 clear
-                omxplayer $entry > /dev/null
+		# play each video twice
+        	"${SERVICE}" ${SERVICEOPTIONS} "$entry" > /dev/null;
+		"${SERVICE}" ${SERVICEOPTIONS} "$entry" > /dev/null;
+		#xrefresh -display :0
         done
-fi
 done
+
+setterm -cursor on
+clear
