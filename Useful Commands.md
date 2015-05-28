@@ -8,6 +8,10 @@ __Password:__ `raspberry`
 
 # Useful Commands
 
+### Firmware & updating
+`apt-get install rpi-update`  
+`sudo rpi-update`
+
 ### Booting
 _(add -F to run `fsck` on boot)_  
 `sudo shutdown -h now` __shut down__  
@@ -24,6 +28,16 @@ _(add -F to run `fsck` on boot)_
 `df -h`  
 - Create symlink (alias)
 `ln -s file /path/to/target`  
+
+### Networking
+- Restart network interface  
+`sudo /etc/init.d/networking restart`  
+- Edit network config file   
+`sudo nano /etc/network/interfaces`  
+- Show network interfaces
+`ifconfig`
+- Enable/Disable a network interface
+``  
 
 ### GIT stuff
 `git clone git://github.com/repoName` __Clone a repo__  
