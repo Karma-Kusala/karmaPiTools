@@ -8,7 +8,7 @@ __Password:__ `raspberry`
 
 # Useful Commands
 
-## Firmware & updating
+## Firmware, updating & initial setup
 - __Full rpi update__  
 `sudo apt-get install rpi-update`  
 `sudo rpi-update`  
@@ -16,8 +16,14 @@ __Password:__ `raspberry`
 `sudo apt-get upgrade`  
 
 ### Split Video Memory
-__(And other configuration settings)__  
+ - __(And other configuration settings)__  
 `sudo raspi-config`
+
+### Free some disk space
+ - __Remove Wolfram__  
+`sudo apt-get purge wolfram-engine`  
+ - __Remove phyton games__  
+`sudo rm -r ~/python_games/`  
 
 ## Linux Basics
 ### Booting 
@@ -63,6 +69,9 @@ _(needs an internet connection)_
 `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
 
 ## GIT stuff  
+- __Setup__  
+`git config --global user.email "you@example.com"`  
+`git config --global user.name "Your Name"`  
 - __Clone a repo__  
 `git clone git://github.com/repoName`  
 - __Sync with remote tracking repo__  
