@@ -25,6 +25,9 @@ __Password:__ `raspberry`
  - __Remove phyton games__  
 `sudo rm -r ~/python_games/`  
 
+### Fix locales
+`sudo dpkg-reconfigure locales`    
+
 ## Linux Basics
 ### Booting 
 - __shut down__: `sudo shutdown -h now`   
@@ -103,7 +106,26 @@ _More to come..._
 ## Setup a startup script  
 (execute on boot)
 
+## OpenFrameworks
+- __Get G++ 4.8__  
+`sudo apt-get install g++-4.8`
+`cd /usr/bin`
+`sudo rm g++`
+`sudo ln -s g++-4.8 g++`
+- __Install__ _(rpi)_  
+`cd ~/`  
+`git clone https://github.com/openframeworks/openFrameworks.git`
+`cd ~/openFrameWorks/scripts/linux/debian_armv6l/`  
+`sudo ./install_dependencies.sh`  
+- __Build OF__  
+`cd ~/openFrameWorks/libs/openFrameworksCompiled/project`
+- Build Example  
 
+## Wiring Pi
+`cd ~`  
+`git clone git://git.drogon.net/wiringPi`  
+`cd ./wiringPi`  
+`./build`
 
 ## piShadertoy setup
 Github repo: [pishadertoy](https://github.com/dff180/pishadertoy).
