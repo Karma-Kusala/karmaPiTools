@@ -10,7 +10,7 @@ setterm -clear
 setterm -cursor off
 
 # set here the path to the directory containing your videos
-VIDEOPATH="/home/pi/Desktop/flam3s/" 
+VIDEOPATH="/home/pi/Desktop/Abysses_Videos" 
 
 # you can normally leave this alone
 SERVICE="omxplayer"
