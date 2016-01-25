@@ -20,8 +20,10 @@ __Password:__ `raspberry`
 `sudo raspi-config`
 
 ### Free some disk space
- - __Remove Wolfram__  
-`sudo apt-get purge wolfram-engine`  
+ - __Remove some default installed apps.__ (about 660Mb)  
+_(check if you don't need them)_  
+`sudo apt-get remove --purge scratch nuscratch sonic-pi minecraft-pi python-minecraftpi wolfram-engine timidity smartsim penguinspuzzle`  
+`sudo apt-get autoremove`
  - __Remove phyton games__  
 `sudo rm -r ~/python_games/`  
 
@@ -143,3 +145,7 @@ make
 cd ~/pishadertoy
 ./pishadertoy ./shaders/star.f.glsl ./textures/tex07.png ./textures/texl0.jpg
 ```
+
+###### Partition tool
+`sudo apt-get install gparted` (then use UI)  
+
