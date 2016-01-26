@@ -8,6 +8,10 @@ __Password:__ `raspberry`
 
 # Useful Commands
 
+## Become root  
+ - `sudo -i`  
+ - `cntrl + d` to exit  
+
 ## Firmware, updating & initial setup
 - __Full rpi update__  
 `sudo apt-get install rpi-update`  
